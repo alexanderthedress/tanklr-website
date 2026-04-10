@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tanklr — Tankless Water Heater Descaling & Dryer Vent Cleaning | Oceanside, CA</title>
-  <meta name="description" content="Professional tankless water heater descaling and dryer vent cleaning in Oceanside and San Diego. Book online today — fast, affordable, and reliable." />
+  <meta name="description" content="Professional tankless water heater descaling and dryer vent cleaning serving Oceanside, Carlsbad, Encinitas, La Jolla, and all of North County San Diego. Book online today." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -152,6 +152,66 @@
     .service-card a:hover { color: var(--teal-dark); }
     .service-card a::after { content: '→'; }
 
+    /* ── PRICING ── */
+    .pricing { background: var(--navy); }
+    .pricing .section-label { color: var(--teal); }
+    .pricing .section-title { color: #fff; }
+    .pricing .section-sub { color: rgba(255,255,255,0.6); }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 28px; max-width: 860px;
+    }
+    .pricing-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px; padding: 40px;
+      display: flex; flex-direction: column;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--teal);
+      box-shadow: 0 12px 40px rgba(60,200,176,0.15);
+    }
+    .pricing-card.featured {
+      background: rgba(60,200,176,0.08);
+      border-color: var(--teal);
+      box-shadow: 0 8px 32px rgba(60,200,176,0.2);
+    }
+    .pricing-badge {
+      display: inline-block; background: var(--teal); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 100px;
+      margin-bottom: 20px; align-self: flex-start;
+    }
+    .pricing-service {
+      font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.7);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+    }
+    .pricing-price {
+      font-size: 52px; font-weight: 800; color: #fff;
+      line-height: 1; margin-bottom: 6px; letter-spacing: -0.02em;
+    }
+    .pricing-price span { font-size: 24px; font-weight: 600; vertical-align: top; margin-top: 10px; display: inline-block; }
+    .pricing-range { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 28px; }
+    .pricing-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; margin-bottom: 32px; }
+    .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+    .pricing-features li::before { content: '✓'; color: var(--teal); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .btn-pricing-primary {
+      background: var(--teal); color: #fff; text-align: center;
+      padding: 14px 24px; border-radius: 8px; text-decoration: none;
+      font-weight: 700; font-size: 15px; transition: background 0.2s, transform 0.15s;
+    }
+    .btn-pricing-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .btn-pricing-outline {
+      background: transparent; color: #fff; text-align: center;
+      padding: 14px 24px; border-radius: 8px; text-decoration: none;
+      font-weight: 700; font-size: 15px; border: 2px solid rgba(255,255,255,0.25);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .btn-pricing-outline:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
+
     /* ── WHY TANKLR ── */
     .why { background: #fff; }
     .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
@@ -231,6 +291,7 @@
       footer { grid-template-columns: 1fr; }
       .footer-links { align-items: flex-start; }
       #contact > div { grid-template-columns: 1fr !important; }
+      .pricing-grid { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -241,6 +302,7 @@
     <a href="#" class="nav-logo"><img src="images/logo-light.png" alt="Tanklr" /></a>
     <div class="nav-links" id="navLinks">
       <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
       <a href="#why">Why Tanklr</a>
       <a href="#team">Our Team</a>
       <a href="#contact" class="btn-primary">Get a Free Estimate</a>
@@ -254,7 +316,7 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <div class="hero-badge">Oceanside & San Diego, CA</div>
+      <div class="hero-badge">Oceanside to San Diego, CA</div>
       <h1>Keep Your Home <span>Running Clean</span> and Efficient</h1>
       <p>Tanklr specializes in tankless water heater descaling and dryer vent cleaning — two services that protect your home, extend equipment life, and lower your bills.</p>
       <div class="hero-ctas">
@@ -293,7 +355,7 @@
             </div>
             <h3>Tankless Water Heater Descaling</h3>
             <p>Mineral buildup silently reduces efficiency and shortens the life of your tankless water heater. Our descaling service flushes out calcium and lime deposits — restoring performance and protecting your investment.</p>
-            <a href="https://clienthub.getjobber.com/hubs/63976dab-19eb-4a20-b6c9-6bbaa9add2ba/public/requests/2757874/new" target="_blank" rel="noopener">Book a Descaling</a>
+            <a href="#contact">Book a Descaling</a>
           </div>
         </div>
         <div class="service-card">
@@ -304,10 +366,55 @@
             </div>
             <h3>Dryer Vent Cleaning</h3>
             <p>Clogged dryer vents are the leading cause of house fires — and they make your dryer work harder. We clear the lint and debris from your entire vent line so your dryer runs faster, safer, and more efficiently.</p>
-            <a href="https://clienthub.getjobber.com/hubs/63976dab-19eb-4a20-b6c9-6bbaa9add2ba/public/requests/2757874/new" target="_blank" rel="noopener">Book a Cleaning</a>
+            <a href="#contact">Book a Cleaning</a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="section-label">Transparent Pricing</div>
+    <h2 class="section-title">Simple, Upfront Costs</h2>
+    <p class="section-sub">No hidden fees, no surprises. Here's exactly what you'll pay — free estimates always included.</p>
+    <div class="pricing-grid">
+
+      <!-- Tankless Descaling -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-service">Tankless Water Heater Descaling</div>
+        <div class="pricing-price"><span>$</span>249</div>
+        <div class="pricing-range">Flat rate — one unit</div>
+        <hr class="pricing-divider"/>
+        <ul class="pricing-features">
+          <li>Full descaling flush — removes calcium & lime buildup</li>
+          <li>Restores flow rate and heating efficiency</li>
+          <li>Extends equipment lifespan</li>
+          <li>All hoses, pump, and descaling solution included</li>
+          <li>Service report provided after every job</li>
+          <li>Free estimate before we start</li>
+        </ul>
+        <a href="#contact" class="btn-pricing-primary">Book a Descaling</a>
+      </div>
+
+      <!-- Dryer Vent Cleaning -->
+      <div class="pricing-card">
+        <div class="pricing-service">Dryer Vent Cleaning</div>
+        <div class="pricing-price"><span>$</span>99<span style="font-size:28px;font-weight:700;color:rgba(255,255,255,0.5)"> – $199</span></div>
+        <div class="pricing-range">Price depends on vent length & complexity</div>
+        <hr class="pricing-divider"/>
+        <ul class="pricing-features">
+          <li>Full vent line clearing — interior to exterior</li>
+          <li>Removes lint, debris, and blockages</li>
+          <li>Reduces fire risk and drying time</li>
+          <li>Drill-powered brush system for thorough clean</li>
+          <li>Before & after inspection included</li>
+          <li>Free estimate before we start</li>
+        </ul>
+        <a href="#contact" class="btn-pricing-outline">Book a Cleaning</a>
+      </div>
+
     </div>
   </section>
 
@@ -423,7 +530,7 @@
             </div>
             <div>
               <div style="font-size:13px;color:var(--muted);margin-bottom:2px;">Service Area</div>
-              <div style="font-weight:700;color:var(--navy);font-size:15px;">Oceanside, Carlsbad, Vista,<br/>San Marcos & surrounding San Diego</div>
+              <div style="font-weight:700;color:var(--navy);font-size:15px;">Oceanside, Vista, Carlsbad, San Marcos, Escondido, Encinitas, Solana Beach, La Jolla & Del Mar</div>
             </div>
           </div>
         </div>
@@ -447,7 +554,7 @@
   <footer>
     <div>
       <img src="images/logo-dark.png" alt="Tanklr" />
-      <p>Tankless water heater descaling and dryer vent cleaning. Serving Oceanside and San Diego, CA.</p>
+      <p>Tankless water heater descaling and dryer vent cleaning. Serving Oceanside, Vista, Carlsbad, San Marcos, Escondido, Encinitas, Solana Beach, La Jolla & Del Mar.</p>
       <p style="margin-top:12px;">
         <a href="tel:8582472017" style="color:var(--teal);text-decoration:none;font-weight:600;">(858) 247-2017</a><br/>
         <a href="mailto:support@tanklr.com" style="color:rgba(255,255,255,0.45);text-decoration:none;">support@tanklr.com</a>

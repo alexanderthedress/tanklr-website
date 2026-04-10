@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanklr — Tankless Water Heater Descaling & Dryer Vent Cleaning | Oceanside, CA</title>
+  <meta name="description" content="Professional tankless water heater descaling and dryer vent cleaning in Oceanside and San Diego. Book online today — fast, affordable, and reliable." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0F2A4A;
+      --teal: #3CC8B0;
+      --teal-dark: #2aaa98;
+      --light-bg: #F7F9FC;
+      --text: #1a2e42;
+      --muted: #5a7080;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text); background: #fff; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+    }
+    .nav-logo img { height: 36px; display: block; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--navy); font-weight: 600; font-size: 14px; letter-spacing: 0.01em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .btn-primary {
+      background: var(--teal); color: #fff;
+      padding: 10px 22px; border-radius: 6px;
+      font-weight: 700; font-size: 14px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: 68px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('images/hero.jpg');
+      background-size: cover; background-position: center 30%;
+      filter: brightness(0.35);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      padding: 80px 5% 80px;
+      max-width: 700px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(60,200,176,0.2);
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      padding: 5px 14px; border-radius: 100px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5.5vw, 62px);
+      font-weight: 800; color: #fff;
+      line-height: 1.1; margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span { color: var(--teal); }
+    .hero p {
+      font-size: clamp(16px, 1.8vw, 19px);
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6; margin-bottom: 36px;
+      max-width: 540px;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-large {
+      padding: 15px 32px; font-size: 16px; font-weight: 700;
+      border-radius: 8px; text-decoration: none; transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-teal { background: var(--teal); color: #fff; }
+    .btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(60,200,176,0.35); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+    .hero-stats {
+      position: absolute; bottom: 40px; left: 5%; z-index: 1;
+      display: flex; gap: 40px;
+    }
+    .stat { color: #fff; }
+    .stat-number { font-size: 28px; font-weight: 800; color: var(--teal); line-height: 1; }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ── SECTIONS ── */
+    section { padding: 90px 5%; }
+    .section-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 800; color: var(--navy); line-height: 1.15;
+      letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 17px; color: var(--muted); line-height: 1.65;
+      max-width: 580px; margin-bottom: 48px;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--light-bg); }
+    .services-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 28px; max-width: 1100px; margin: 0 auto;
+    }
+    .service-card {
+      background: #fff; border-radius: 16px;
+      overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+    .service-card img { width: 100%; height: 280px; object-fit: cover; }
+    .service-card-body { padding: 32px; }
+    .service-icon {
+      width: 48px; height: 48px; background: rgba(60,200,176,0.12);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .service-icon svg { width: 24px; height: 24px; stroke: var(--teal); }
+    .service-card h3 { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .service-card p { font-size: 15px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
+    .service-card a { color: var(--teal); font-weight: 700; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .service-card a:hover { color: var(--teal-dark); }
+    .service-card a::after { content: '→'; }
+
+    /* ── WHY TANKLR ── */
+    .why { background: #fff; }
+    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .why-img { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12); }
+    .why-img img { width: 100%; height: 440px; object-fit: cover; }
+    .why-features { display: flex; flex-direction: column; gap: 28px; margin-top: 40px; }
+    .why-item { display: flex; gap: 16px; align-items: flex-start; }
+    .why-dot {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(60,200,176,0.12); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .why-dot svg { width: 20px; height: 20px; stroke: var(--teal); }
+    .why-item h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .why-item p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── HOW IT WORKS ── */
+    .how { background: var(--navy); }
+    .how .section-title { color: #fff; }
+    .how .section-sub { color: rgba(255,255,255,0.65); }
+    .how .section-label { color: var(--teal); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 900px; }
+    .step { display: flex; flex-direction: column; gap: 14px; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: rgba(60,200,176,0.15); border: 1px solid rgba(60,200,176,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800; color: var(--teal);
+    }
+    .step h4 { font-size: 17px; font-weight: 700; color: #fff; }
+    .step p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65; }
+
+    /* ── TEAM ── */
+    .team { background: var(--light-bg); text-align: center; }
+    .team-inner { max-width: 700px; margin: 0 auto; }
+    .team-photo {
+      width: 100%; max-width: 560px; border-radius: 20px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.14);
+      margin: 0 auto 32px; display: block;
+    }
+    .team-names { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .team-title { font-size: 14px; color: var(--teal); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
+    .team-bio { font-size: 16px; color: var(--muted); line-height: 1.7; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a4a7a 100%);
+      padding: 80px 5%; text-align: center;
+    }
+    .cta-band h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: #fff; margin-bottom: 14px; }
+    .cta-band p { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 36px; }
+    .cta-band .btn-large { font-size: 17px; padding: 17px 40px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a1e35; padding: 48px 5% 32px;
+      display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 40px;
+    }
+    footer img { height: 30px; margin-bottom: 14px; display: block; }
+    footer p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 320px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .footer-links a { color: rgba(255,255,255,0.5); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-bottom { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 20px; font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #fff; padding: 24px 5% 32px; gap: 20px; border-bottom: 1px solid #eee; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-inner { grid-template-columns: 1fr; }
+      .why-img { order: -1; }
+      .why-img img { height: 300px; }
+      .steps { grid-template-columns: 1fr; }
+      .hero-stats { flex-wrap: wrap; gap: 24px; }
+      footer { grid-template-columns: 1fr; }
+      .footer-links { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo"><img src="images/logo-light.png" alt="Tanklr" /></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#why">Why Tanklr</a>
+      <a href="#team">Our Team</a>
+      <a href="https://clienthub.getjobber.com/hubs/63976dab-19eb-4a20-b6c9-6bbaa9add2ba/public/requests/2757874/new" class="btn-primary" target="_blank" rel="noopener">Get a Free Estimate</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Oceanside & San Diego, CA</div>
+      <h1>Keep Your Home <span>Running Clean</span> and Efficient</h1>
+      <p>Tanklr specializes in tankless water heater descaling and dryer vent cleaning — two services that protect your home, extend equipment life, and lower your bills.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-large btn-teal">Get a Free Estimate</a>
+        <a href="#services" class="btn-large btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Specialized Services</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">Same Day</div>
+        <div class="stat-label">Availability</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">Free</div>
+        <div class="stat-label">Estimates</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Specialized Home Services</h2>
+      <p class="section-sub">We keep the systems you depend on every day running safely and efficiently — with the expertise and professionalism your home deserves.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="images/service-descaling.jpg" alt="Tankless Water Heater Descaling" loading="lazy" />
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2C6 8 4 12 4 15a8 8 0 0016 0c0-3-2-7-8-13z"/></svg>
+            </div>
+            <h3>Tankless Water Heater Descaling</h3>
+            <p>Mineral buildup silently reduces efficiency and shortens the life of your tankless water heater. Our descaling service flushes out calcium and lime deposits — restoring performance and protecting your investment.</p>
+            <a href="https://clienthub.getjobber.com/hubs/63976dab-19eb-4a20-b6c9-6bbaa9add2ba/public/requests/2757874/new" target="_blank" rel="noopener">Book a Descaling</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="images/service-dryer.jpg" alt="Dryer Vent Cleaning" loading="lazy" />
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>Dryer Vent Cleaning</h3>
+            <p>Clogged dryer vents are the leading cause of house fires — and they make your dryer work harder. We clear the lint and debris from your entire vent line so your dryer runs faster, safer, and more efficiently.</p>
+            <a href="https://clienthub.getjobber.com/hubs/63976dab-19eb-4a20-b6c9-6bbaa9add2ba/public/requests/2757874/new" target="_blank" rel="noopener">Book a Cleaning</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TANKLR -->
+  <section class="why" id="why">
+    <div class="why-inner">
+      <div>
+        <div class="section-label">Why Tanklr</div>
+        <h2 class="section-title">Professional. Local. Reliable.</h2>
+        <p class="section-sub" style="margin-bottom:0;">We're your neighbors in Oceanside — a small, focused team that takes pride in clean work and honest service.</p>
+        <div class="why-features">
+          <div class="why-item">
+            <div class="why-dot">
+              <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <h4>Specialized, Not Generic</h4>
+              <p>We don't do everything. We do two things exceptionally well — descaling and dryer vents — so you get a technician who truly knows the job.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-dot">
+              <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Locally Owned & Operated</h4>
+              <p>Tanklr is a local Oceanside business. When you hire us, you're supporting your community — and getting someone with a real stake in doing great work.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-dot">
+              <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div>
+              <h4>Transparent Pricing</h4>
+              <p>No surprises. We give you a clear estimate upfront and stick to it. Free estimates on all jobs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-img">
+        <img src="images/tech-homeowner.jpg" alt="Tanklr technician explaining service to homeowner" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="section-label">Simple Process</div>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Getting service with Tanklr takes minutes to schedule and a short visit to complete.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Request an Estimate</h4>
+        <p>Fill out our quick online form or give us a call. We'll get back to you fast with a clear, upfront price.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>We Come to You</h4>
+        <p>A Tanklr tech shows up on time, in uniform, with all the equipment needed to get the job done right.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Clean, Done, Paid</h4>
+        <p>We finish the job cleanly, walk you through what we did, and handle payment on the spot. That's it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="team-inner">
+      <div class="section-label">Our Team</div>
+      <h2 class="section-title">Meet the Founders</h2>
+      <img src="images/team.jpg" alt="Tanklr co-founders" class="team-photo" loading="lazy" />
+      <div class="team-names">Alex & Clark</div>
+      <div class="team-title">Co-Founders, Tanklr</div>
+      <p class="team-bio">We started Tanklr because we saw how much homeowners were overpaying for services that most companies treat as an afterthought. Tankless descaling and dryer vent cleaning are critical maintenance jobs — we built a business around doing them right.</p>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section class="cta-band" id="contact">
+    <h2>Ready to Book or Get a Free Estimate?</h2>
+    <p>Serving Oceanside, Carlsbad, Vista, San Marcos, and surrounding San Diego communities.</p>
+    <a href="https://clienthub.getjobber.com/hubs/63976dab-19eb-4a20-b6c9-6bbaa9add2ba/public/requests/2757874/new" class="btn-large btn-teal" target="_blank" rel="noopener">Request Service Online</a>
+    <br /><br />
+    <p style="font-size:14px;color:rgba(255,255,255,0.5);">Or call us at <a href="tel:8582472017" style="color:var(--teal);font-weight:700;">(858) 247-2017</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <img src="images/logo-dark.png" alt="Tanklr" />
+      <p>Tankless water heater descaling and dryer vent cleaning. Serving Oceanside and San Diego, CA.</p>
+      <p style="margin-top:12px;">
+        <a href="tel:8582472017" style="color:var(--teal);text-decoration:none;font-weight:600;">(858) 247-2017</a><br/>
+        <a href="mailto:support@tanklr.com" style="color:rgba(255,255,255,0.45);text-decoration:none;">support@tanklr.com</a>
+      </p>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Tanklr</a>
+      <a href="#team">Our Team</a>
+      <a href="https://clienthub.getjobber.com/hubs/63976dab-19eb-4a20-b6c9-6bbaa9add2ba/public/requests/2757874/new" target="_blank" rel="noopener">Get an Estimate</a>
+      <a href="mailto:support@tanklr.com">support@tanklr.com</a>
+    </div>
+    <div class="footer-bottom">© 2026 Tanklr. All rights reserved. | Oceanside, CA</div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    // Close nav on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+  </script>
+
+</body>
+</html>

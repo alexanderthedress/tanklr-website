@@ -747,5 +747,44 @@
     });
   </script>
 
+  <!-- GA4 Button Click Tracking -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var buttons = [
+        { selector: 'a.btn-large.btn-teal',       label: 'Hero — Get a Free Estimate' },
+        { selector: 'a.btn-large.btn-outline',     label: 'Hero — Our Services' },
+        { selector: 'a.btn-pricing-primary',       label: 'Pricing — Book a Descaling' },
+        { selector: 'a.btn-pricing-outline',       label: 'Pricing — Book a Cleaning' },
+        { selector: 'a.btn-primary',               label: 'Nav — Get a Free Estimate' },
+        { selector: 'a.cta-band-btn',              label: 'CTA Band — Get a Free Estimate' }
+      ];
+
+      buttons.forEach(function (btn) {
+        document.querySelectorAll(btn.selector).forEach(function (el) {
+          el.addEventListener('click', function () {
+            if (typeof gtag === 'function') {
+              gtag('event', 'cta_click', {
+                event_category: 'CTA',
+                event_label: btn.label
+              });
+            }
+          });
+        });
+      });
+
+      // Track phone number clicks
+      document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'phone_click', {
+              event_category: 'Contact',
+              event_label: el.getAttribute('href')
+            });
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>

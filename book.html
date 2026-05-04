@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Service — $50 Off | Tanklr</title>
+  <meta name="description" content="Claim your $50 off first service with Tanklr. Tankless water heater descaling and dryer vent cleaning in Oceanside and North County San Diego." />
+  <meta name="robots" content="noindex" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <meta name="theme-color" content="#0F2A4A" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0F2A4A;
+      --teal: #3CC8B0;
+      --teal-dark: #2aaa98;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      width: 100%;
+      background: var(--navy);
+      padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .top-bar img { height: 38px; display: block; }
+
+    /* ── HERO STRIP ── */
+    .hero-strip {
+      width: 100%;
+      background: var(--teal);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .coupon-badge {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+    .hero-strip h1 {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .hero-strip p {
+      font-size: clamp(14px, 2vw, 17px);
+      color: rgba(15,42,74,0.75);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── TRUST PILLS ── */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px 24px;
+      background: var(--navy);
+    }
+    .trust-pill {
+      background: rgba(60,200,176,0.12);
+      border: 1px solid rgba(60,200,176,0.3);
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    /* ── FORM SECTION ── */
+    .form-section {
+      width: 100%;
+      max-width: 680px;
+      padding: 0 20px 40px;
+    }
+    .form-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+    }
+    .form-card-header {
+      background: var(--navy);
+      padding: 18px 24px;
+      border-bottom: 3px solid var(--teal);
+    }
+    .form-card-header p {
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .form-card-header span { color: var(--teal); }
+    iframe {
+      display: block;
+      width: 100%;
+      min-height: 640px;
+      border: none;
+    }
+
+    /* ── SERVICES REMINDER ── */
+    .services-row {
+      width: 100%;
+      max-width: 680px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding: 0 20px 32px;
+    }
+    .service-chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 16px 18px;
+      text-align: center;
+    }
+    .service-chip .price {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .service-chip .name {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .service-chip .detail {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 4px;
+    }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px 24px 32px;
+      color: rgba(255,255,255,0.25);
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .page-footer a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .services-row { grid-template-columns: 1fr; }
+      .hero-strip { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="top-bar">
+    <a href="https://tanklr.com"><img src="images/logo-dark.png" alt="Tanklr" /></a>
+  </div>
+
+  <!-- $50 Off Hero -->
+  <div class="hero-strip">
+    <div class="coupon-badge">New Customer Offer</div>
+    <h1>Get $50 Off Your First<br>Tankless Descaling</h1>
+    <p>Fill out the form below and we'll reach out to schedule your appointment. The $50 discount applies to your first tankless water heater descaling.</p>
+  </div>
+
+  <!-- Trust signals -->
+  <div class="trust-row">
+    <span class="trust-pill">No Hidden Fees</span>
+    <span class="trust-pill">Flat Rate Pricing</span>
+    <span class="trust-pill">Locally Owned</span>
+    <span class="trust-pill">Fully Insured</span>
+  </div>
+
+  <!-- Services quick reference -->
+  <div class="services-row">
+    <div class="service-chip">
+      <span class="price">$199<span style="font-size:14px;font-weight:600"> after discount</span></span>
+      <span class="name">Tankless Descaling</span>
+      <span class="detail">Normally $249 — save $50</span>
+    </div>
+    <div class="service-chip">
+      <span class="price">$99–$199</span>
+      <span class="name">Dryer Vent Cleaning</span>
+      <span class="detail">$99–$199 depending on vent length</span>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <div class="form-section">
+    <div class="form-card">
+      <div class="form-card-header">
+        <p>Book below — we'll confirm your appointment within <span>1 business day</span></p>
+      </div>
+      <iframe
+        src="https://book.servicem8.com/request_service_booking?strVendorUUID=eff0c1df-87de-46c5-9a8e-2422b159457b#01086220-5656-42e4-9973-2423a33f7c0b"
+        title="Book a Service"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <a href="https://tanklr.com">← Back to tanklr.com</a> &nbsp;|&nbsp;
+    Questions? Call <a href="tel:+18582472017">(858) 247-2017</a> or email <a href="mailto:support@tanklr.com">support@tanklr.com</a>
+  </div>
+
+</body>
+</html>

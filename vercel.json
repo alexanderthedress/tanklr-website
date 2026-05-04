@@ -1,5 +1,8 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/book", "destination": "/book/index.html" }
+  ],
   "headers": [
     {
       "source": "/*.md",
